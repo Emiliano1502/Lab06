@@ -555,6 +555,7 @@ button {
     display: grid;
     /* ERROR 10: Las cards de intereses no se muestran en 3 columnas, están apiladas
        PISTA: Falta la propiedad de CSS Grid que define las columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-3xl);
 }
@@ -564,6 +565,7 @@ button {
     border: 1px solid var(--color-bg-tertiary);
     /* ERROR 11: Las cards de intereses tienen esquinas puntiagudas en vez de redondeadas
        PISTA: Falta la propiedad border-radius */
+    border-radius: var(--border-radius-xl);
     padding: var(--spacing-xl);
     transition: all var(--transition-base);
     position: relative;
@@ -579,6 +581,7 @@ button {
     height: 3px;
     background: var(--gradient-primary);
     transform: scaleX(0);
+    transition: transform var(--transition-base);
     /* ERROR 12 (AVANZADO): La línea superior de las cards aparece instantáneamente sin animación
        SOLUCIÓN: Falta la transición para la propiedad transform
        Agregar: transition: transform var(--transition-base);
@@ -783,6 +786,7 @@ button {
    Los selectores específicos como --github necesitan definir su propio color */
 .social__icon--github {
     background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
 }
 
 .social__icon--email {
@@ -824,6 +828,7 @@ button {
 .projects__grid {
     /* ERROR 14: Los proyectos no se muestran en columnas, solo apilados
        PISTA: Falta definir cómo se distribuyen las columnas en el grid */
+    grid-template-columns: repeat(3, 1fr);
     display: grid;
     gap: var(--spacing-xl);
 }
@@ -879,7 +884,7 @@ button {
    SOLUCIÓN: El selector está mal escrito, debería ser .project__card:hover .project__overlay
    El selector correcto utiliza :hover en el contenedor padre para afectar al hijo
    Cambiar project__card-hover por .project__card:hover */
-.project__card-hover .project__overlay {
+.project__card:hover .project__overlay {
     opacity: 1;
 }
 
@@ -1079,6 +1084,7 @@ button {
 .footer__social {
     /* ERROR 16: Los iconos de redes sociales del footer están apilados verticalmente
        PISTA: Falta la propiedad display que permite alinear elementos en fila */
+    display: flex;
     gap: var(--spacing-md);
 }
 
