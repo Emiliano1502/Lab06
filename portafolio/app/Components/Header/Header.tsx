@@ -1,23 +1,23 @@
 import React from 'react';
 import styles from './Header.module.css';
-
+import Link from 'next/link';
 let HeaderData: string = 'Emiliano Ruiz Garcia';
 
 export default function Header() {
     return (
         <>
-            <header className="header" id="header">
-                <nav className="nav container">
-                    <a href="#home" className="nav__logo">
-                        <span className="logo__bracket">&lt;</span>
+            <header className={styles.header} id="header">
+                <nav className={"container ${styles.nav}"}>
+                    <Link href="#home" className={styles.nav__logo}>
+                        <span className={styles.logo__bracket}>&lt;</span>
                         Emiliano
-                        <span className="logo__bracket">/&gt;</span>
-                    </a>
+                        <span className={styles.logo__bracket}>/&gt;</span>
+                    </Link>
                     
                     {/* Checkbox para menú móvil */}
-                    <input type="checkbox" id="nav-toggle" className="nav__checkbox" />
+                    <input type={styles.checkbox} id="nav-toggle" className={styles.nav__checkbox} />
                     
-                    <label htmlFor="nav-toggle" className="nav__toggle">
+                    <label htmlFor="nav-toggle" className={styles.nav__toggle}>
                         <i className="fas fa-bars"></i>
                     </label>
                     
@@ -29,27 +29,27 @@ export default function Header() {
                         <ul className="nav__list">
                             <li className="nav__item">
                                 <label htmlFor="nav-toggle">
-                                    <a href="#home" className="nav__link">Inicio</a>
+                                    <Link href="#home" className="nav__link">Inicio</Link>
                                 </label>
                             </li>
                             <li className="nav__item">
                                 <label htmlFor="nav-toggle">
-                                    <a href="#interests" className="nav__link">Intereses</a>
+                                    <Link href="#interests" className="nav__link">Intereses</Link>
                                 </label>
                             </li>
                             <li className="nav__item">
                                 <label htmlFor="nav-toggle">
-                                    <a href="#cv" className="nav__link">CV</a>
+                                    <Link href="#cv" className="nav__link">CV</Link>
                                 </label>
                             </li>
                             <li className="nav__item">
                                 <label htmlFor="nav-toggle">
-                                    <a href="#projects" className="nav__link">Proyectos</a>
+                                    <Link href="#projects" className="nav__link">Proyectos</Link>
                                 </label>
                             </li>
                             <li className="nav__item">
                                 <label htmlFor="nav-toggle">
-                                    <a href="#contact" className="nav__link">Contacto</a>
+                                    <Link href="#contact" className="nav__link">Contacto</Link>
                                 </label>
                             </li>
                         </ul>
