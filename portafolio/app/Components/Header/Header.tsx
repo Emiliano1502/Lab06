@@ -19,7 +19,7 @@ export default function Header() {
                         <i className="fas fa-bars"></i>
                     </label>
                     
-                    <div className={styles.nav__menu} id="nav-menu">
+                    <div className="nav__menu" id="nav-menu">
                         <label htmlFor="nav-toggle" className={styles.nav__close}>
                             <i className="fas fa-times"></i>
                         </label>
